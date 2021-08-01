@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/sticky_offerpack/static/css/main.c1857915.chunk.css",
-    "main.js": "/sticky_offerpack/static/js/main.9ac9e5db.chunk.js",
-    "main.js.map": "/sticky_offerpack/static/js/main.9ac9e5db.chunk.js.map",
-    "runtime-main.js": "/sticky_offerpack/static/js/runtime-main.9e2a6a40.js",
-    "runtime-main.js.map": "/sticky_offerpack/static/js/runtime-main.9e2a6a40.js.map",
+    "main.css": "/sticky_offerpack/static/css/main.71417351.chunk.css",
+    "main.js": "/sticky_offerpack/static/js/main.b025746b.chunk.js",
+    "main.js.map": "/sticky_offerpack/static/js/main.b025746b.chunk.js.map",
+    "runtime-main.js": "/sticky_offerpack/static/js/runtime-main.889995ee.js",
+    "runtime-main.js.map": "/sticky_offerpack/static/js/runtime-main.889995ee.js.map",
     "static/css/2.679831fc.chunk.css": "/sticky_offerpack/static/css/2.679831fc.chunk.css",
-    "static/js/2.e4618de2.chunk.js": "/sticky_offerpack/static/js/2.e4618de2.chunk.js",
-    "static/js/2.e4618de2.chunk.js.map": "/sticky_offerpack/static/js/2.e4618de2.chunk.js.map",
-    "static/js/3.214a69b5.chunk.js": "/sticky_offerpack/static/js/3.214a69b5.chunk.js",
-    "static/js/3.214a69b5.chunk.js.map": "/sticky_offerpack/static/js/3.214a69b5.chunk.js.map",
+    "static/js/2.e13f90c3.chunk.js": "/sticky_offerpack/static/js/2.e13f90c3.chunk.js",
+    "static/js/2.e13f90c3.chunk.js.map": "/sticky_offerpack/static/js/2.e13f90c3.chunk.js.map",
+    "static/js/3.29087131.chunk.js": "/sticky_offerpack/static/js/3.29087131.chunk.js",
+    "static/js/3.29087131.chunk.js.map": "/sticky_offerpack/static/js/3.29087131.chunk.js.map",
     "index.html": "/sticky_offerpack/index.html",
     "static/css/2.679831fc.chunk.css.map": "/sticky_offerpack/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.c1857915.chunk.css.map": "/sticky_offerpack/static/css/main.c1857915.chunk.css.map",
-    "static/js/2.e4618de2.chunk.js.LICENSE.txt": "/sticky_offerpack/static/js/2.e4618de2.chunk.js.LICENSE.txt"
+    "static/css/main.71417351.chunk.css.map": "/sticky_offerpack/static/css/main.71417351.chunk.css.map",
+    "static/js/2.e13f90c3.chunk.js.LICENSE.txt": "/sticky_offerpack/static/js/2.e13f90c3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9e2a6a40.js",
+    "static/js/runtime-main.889995ee.js",
     "static/css/2.679831fc.chunk.css",
-    "static/js/2.e4618de2.chunk.js",
-    "static/css/main.c1857915.chunk.css",
-    "static/js/main.9ac9e5db.chunk.js"
+    "static/js/2.e13f90c3.chunk.js",
+    "static/css/main.71417351.chunk.css",
+    "static/js/main.b025746b.chunk.js"
   ]
 }
