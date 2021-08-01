@@ -1,0 +1,81 @@
+import { useState, useRef, useMemo, useEffect } from "react";
+import Sticky from "react-stickynode";
+import throttle from "lodash.throttle";
+import "./OfferPack.css";
+
+const getItem = (isActive) => ({
+  title: "Title ",
+  text: "This is list item #",
+  active: isActive || false,
+});
+
+const LIST_ITEMS_COUNT = 10;
+
+const OfferPack = ({ index, onSubmit }) => {
+  const [activeItem, setActive] = useState(0);
+  const [middle, setMiddle] = useState(0);
+  const stickyRef = useRef(null);
+  const listCount = useMemo(
+    () => Math.floor(Math.random() * LIST_ITEMS_COUNT),
+    []
+  );
+  const list = Array(listCount).fill(getItem());
+  list[activeItem] = getItem(true);
+
+  useEffect(() => {
+    const onWindowResize = throttle(() => {
+      if (stickyRef.current) {
+        const stickyHeight = stickyRef.current.offsetHeight || 50;
+        setMiddle(window.innerHeight / 2 - stickyHeight / 2);
+      }
+    }, 100);
+    onWindowResize();
+    window.addEventListener("resize", onWindowResize);
+    return () => {
+      window.removeEventListener("resize", onWindowResize);
+    };
+  }, []);
+
+  return (
+    <div className="OfferPack">
+      <ul className="OfferPackList">
+        {list.map(({ title, text, active }, i) => (
+          <li
+            key={text + i + index}
+            className={`OfferPackList_item ${active ? "active" : ""}`}
+            onClick={() => setActive(i)}
+          >
+            <h3 className="OfferPackList_title">{title}</h3>
+            <p className="OfferPackList_text">
+              {text}
+              {i + 1}
+            </p>
+          </li>
+        ))}
+      </ul>
+      <div
+        className="OfferPack_stickyWrapper"
+        id={`OfferPack_stickyWrapper${index}`}
+      >
+        <Sticky
+          top={middle}
+          bottomBoundary={`#OfferPack_stickyWrapper${index}`}
+        >
+          <div ref={stickyRef} className="OfferPack_sticky">
+            <p>
+              Selected item is: {index}-{activeItem}
+            </p>
+            <button
+              className="OfferPack_submit"
+              onClick={() => onSubmit(`${index}-${activeItem}`)}
+            >
+              Submit
+            </button>
+          </div>
+        </Sticky>
+      </div>
+    </div>
+  );
+};
+
+export default OfferPack;

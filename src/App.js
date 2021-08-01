@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "normalize.css";
+import OfferPack from "./OfferPack";
+import "./App.css";
 
-function App() {
+const list = Array(15).fill("");
+
+const App = () => {
+  const onSubmit = (value) => {
+    console.dir(value);
+    window.location.href = `/${value}`;
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="TopBlock" />
+      {list.map((_, i) => (
+        <OfferPack key={i} index={i} onSubmit={onSubmit} />
+      ))}
     </div>
   );
-}
+};
 
 export default App;

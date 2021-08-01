@@ -1,0 +1,67 @@
+.OfferPack {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #ccc;
+}
+
+.OfferPackList {
+  width: 50%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #ccc;
+}
+
+.OfferPackList_item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.OfferPackList_item:hover {
+  background-color: #e5e5e5;
+}
+
+.OfferPackList_item:active,
+.OfferPackList_item.active {
+  background-color: #ccc;
+}
+
+.OfferPackList_title,
+.OfferPackList_text {
+  margin: 0;
+}
+
+.OfferPackList_title {
+  margin-bottom: 4px;
+}
+
+.OfferPack_stickyWrapper {
+  flex-grow: 1;
+}
+
+.OfferPack_sticky {
+  margin-left: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.OfferPack_submit {
+  margin-top: 1em;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.OfferPack_submit:hover {
+  background-color: #e5e5e5;
+}
+
+.OfferPack_submit:active {
+  background-color: #ccc;
+}
