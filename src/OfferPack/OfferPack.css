@@ -50,6 +50,9 @@
 }
 
 .OfferPack_submit {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
   margin-top: 1em;
   padding: 10px;
   border: 0;

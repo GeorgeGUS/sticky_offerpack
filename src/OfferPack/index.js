@@ -1,6 +1,7 @@
 import { useState, useRef, useMemo, useEffect } from "react";
 import Sticky from "react-stickynode";
 import throttle from "lodash.throttle";
+import { Link, useRouteMatch } from "react-router-dom";
 import "./OfferPack.css";
 
 const getItem = (isActive) => ({
@@ -11,7 +12,8 @@ const getItem = (isActive) => ({
 
 const MAX_LIST_ITEMS_COUNT = 20;
 
-const OfferPack = ({ index, onSubmit }) => {
+const OfferPack = ({ index }) => {
+  const { url } = useRouteMatch();
   const [activeItem, setActive] = useState(0);
   const [top, setTop] = useState(0);
   const stickyRef = useRef(null);
@@ -65,12 +67,12 @@ const OfferPack = ({ index, onSubmit }) => {
             <p>
               Selected item is: {index}-{activeItem}
             </p>
-            <button
+            <Link
+              to={`${url}/${index}-${activeItem}`}
               className="OfferPack_submit"
-              onClick={() => onSubmit(`${index}-${activeItem}`)}
             >
               Submit
-            </button>
+            </Link>
           </div>
         </Sticky>
       </div>
