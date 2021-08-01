@@ -9,14 +9,14 @@ const getItem = (isActive) => ({
   active: isActive || false,
 });
 
-const LIST_ITEMS_COUNT = 10;
+const MAX_LIST_ITEMS_COUNT = 20;
 
 const OfferPack = ({ index, onSubmit }) => {
   const [activeItem, setActive] = useState(0);
   const [top, setTop] = useState(0);
   const stickyRef = useRef(null);
   const listCount = useMemo(
-    () => Math.floor(Math.random() * LIST_ITEMS_COUNT),
+    () => Math.floor(Math.random() * MAX_LIST_ITEMS_COUNT),
     []
   );
   const list = Array(listCount).fill(getItem());
@@ -51,7 +51,7 @@ const OfferPack = ({ index, onSubmit }) => {
             <h3 className="OfferPackList_title">{title}</h3>
             <p className="OfferPackList_text">
               {text}
-              {i + 1}
+              {i}
             </p>
           </li>
         ))}
