@@ -6,9 +6,7 @@ const list = Array(15).fill("");
 
 const App = () => {
   const onSubmit = (value) => {
-    console.dir(value);
-    const newUrl = window.location.href.replace(/\/[^/]*$/, `/${value}`);
-    window.location.href = newUrl;
+    window.location.href += `/${value}`;
   };
   return (
     <div className="App">
