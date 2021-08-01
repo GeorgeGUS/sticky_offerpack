@@ -10,7 +10,7 @@ This is an example of sticky block inside other block, that centered by screen, 
 
 ## TODO
 
-- [ ] Reset block position in first offerpack, when page scrolled to top
+- [x] Reset block position in first offerpack, when page scrolled to top
 
 ---
 

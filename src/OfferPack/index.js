@@ -13,7 +13,7 @@ const LIST_ITEMS_COUNT = 10;
 
 const OfferPack = ({ index, onSubmit }) => {
   const [activeItem, setActive] = useState(0);
-  const [middle, setMiddle] = useState(0);
+  const [top, setTop] = useState(0);
   const stickyRef = useRef(null);
   const listCount = useMemo(
     () => Math.floor(Math.random() * LIST_ITEMS_COUNT),
@@ -26,7 +26,10 @@ const OfferPack = ({ index, onSubmit }) => {
     const onWindowResize = throttle(() => {
       if (stickyRef.current) {
         const stickyHeight = stickyRef.current.offsetHeight || 50;
-        setMiddle(window.innerHeight / 2 - stickyHeight / 2);
+        const newTop = window.innerHeight / 2 - stickyHeight / 2;
+        const currentTop = stickyRef.current.parentNode.offsetTop;
+
+        setTop(currentTop < newTop ? currentTop : newTop);
       }
     }, 100);
     onWindowResize();
@@ -57,10 +60,7 @@ const OfferPack = ({ index, onSubmit }) => {
         className="OfferPack_stickyWrapper"
         id={`OfferPack_stickyWrapper${index}`}
       >
-        <Sticky
-          top={middle}
-          bottomBoundary={`#OfferPack_stickyWrapper${index}`}
-        >
+        <Sticky top={top} bottomBoundary={`#OfferPack_stickyWrapper${index}`}>
           <div ref={stickyRef} className="OfferPack_sticky">
             <p>
               Selected item is: {index}-{activeItem}
