@@ -8,7 +8,7 @@ const App = () => {
   const onSubmit = (value) => {
     console.dir(value);
     const newUrl = window.location.href.replace(/\/[^/]*$/, `/${value}`);
-    window.location.replace(newUrl);
+    window.location.href = newUrl;
   };
   return (
     <div className="App">
